@@ -9,16 +9,21 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class CorsConfig {
 
     @Bean
-    public WebMvcConfigurer colkrsConfigurer() {
+    public WebMvcConfigurer corsConfigurer() {
 
         return new WebMvcConfigurer() {
 
             @Override
             public void addCorsMappings(CorsRegistry registry) {
 
-                registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:5174")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
+                registry.addMapping("/**") // Applique la règle à toutes les routes de l'API
+                        .allowedOrigins(
+                            "http://localhost:5173",
+                            "http://localhost:5174",
+                            "https://entreprise-info.vercel.app" // Votre domaine Vercel
+                        )
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*");
             }
         };
     }
