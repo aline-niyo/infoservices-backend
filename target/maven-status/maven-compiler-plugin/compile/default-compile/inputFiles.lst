@@ -1,0 +1,12 @@
+C:\xampp\htdocs\backend\src\main\java\com\infoservices\backend\BackendApplication.java
+C:\xampp\htdocs\backend\src\main\java\com\infoservices\backend\config\CorsConfig.java
+C:\xampp\htdocs\backend\src\main\java\com\infoservices\backend\config\WebConfig.java
+C:\xampp\htdocs\backend\src\main\java\com\infoservices\backend\controller\ContactController.java
+C:\xampp\htdocs\backend\src\main\java\com\infoservices\backend\controller\DemandeDevisController.java
+C:\xampp\htdocs\backend\src\main\java\com\infoservices\backend\controller\ServiceController.java
+C:\xampp\htdocs\backend\src\main\java\com\infoservices\backend\model\Contact.java
+C:\xampp\htdocs\backend\src\main\java\com\infoservices\backend\model\DemandeDevis.java
+C:\xampp\htdocs\backend\src\main\java\com\infoservices\backend\model\Service.java
+C:\xampp\htdocs\backend\src\main\java\com\infoservices\repository\ContactRepository.java
+C:\xampp\htdocs\backend\src\main\java\com\infoservices\repository\DemandeDevisRepository.java
+C:\xampp\htdocs\backend\src\main\java\com\infoservices\repository\ServiceRepository.java
