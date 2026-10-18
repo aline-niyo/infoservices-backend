@@ -1,0 +1,13 @@
+com\infoservices\backend\repository\DemandeDevisRepository.class
+com\infoservices\backend\model\Contact.class
+com\infoservices\backend\model\Service.class
+com\infoservices\backend\repository\ContactRepository.class
+com\infoservices\backend\repository\ServiceRepository.class
+com\infoservices\backend\controller\DemandeDevisController.class
+com\infoservices\backend\model\DemandeDevis.class
+com\infoservices\backend\BackendApplication.class
+com\infoservices\backend\config\WebConfig.class
+com\infoservices\backend\config\CorsConfig$1.class
+com\infoservices\backend\config\CorsConfig.class
+com\infoservices\backend\controller\ContactController.class
+com\infoservices\backend\controller\ServiceController.class
