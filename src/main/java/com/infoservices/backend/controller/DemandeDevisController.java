@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/devis")
-@CrossOrigin(origins = "*") // 1. Autorise les requêtes provenant du frontend React
+@CrossOrigin(origins = "*")
 public class DemandeDevisController {
 
     private final DemandeDevisRepository demandeDevisRepository;
@@ -20,11 +20,12 @@ public class DemandeDevisController {
     @PostMapping
     public ResponseEntity<?> creerDemandeDevis(@RequestBody DemandeDevis demandeDevis) {
         try {
-            // 2. Validation de l'association du service
-            if (demandeDevis.getService() == null || demandeDevis.getService().getId() == null) {
+            // On ne vérifie PLUS le service_id, parce qu'il n'existe plus
+            // On vérifie juste que la personne a bien tapé son service recherché
+            if (demandeDevis.getServiceRecherche() == null || demandeDevis.getServiceRecherche().isBlank()) {
                 return ResponseEntity
                         .status(HttpStatus.BAD_REQUEST)
-                        .body("Le service sélectionné est invalide.");
+                        .body("Veuillez taper le service recherché.");
             }
 
             DemandeDevis nouvelleDemande = demandeDevisRepository.save(demandeDevis);
@@ -32,9 +33,8 @@ public class DemandeDevisController {
             return ResponseEntity
                     .status(HttpStatus.CREATED)
                     .body(nouvelleDemande);
-                    
+
         } catch (Exception e) {
-            // Affiche l'erreur exacte dans la console Spring Boot pour le débogage
             e.printStackTrace();
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
